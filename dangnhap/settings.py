@@ -87,7 +87,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": 'my_database_qlcf',
         "USER": 'root',
-        "PASSWORD": 'your_password',
+        "PASSWORD": 'CSDL2021',
         "HOST": 'localhost',
         "PORT": '3306',
     }

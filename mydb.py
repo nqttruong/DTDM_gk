@@ -11,6 +11,6 @@ dataBase = pymysql.connect(
 # Tạo một con trỏ để thực hiện các truy vấn
 cursorObject = dataBase.cursor()
 # Tạo cơ sở dữ liệu
-cursorObject.execute("CREATE DATABASE my_database_qlcf")
+# cursorObject.execute("CREATE DATABASE my_database_qlcf")
 
 print("All Done")

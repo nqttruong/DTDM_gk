@@ -1,0 +1,22 @@
+{% extends 'base_coffee.html' %}
+
+{% block content %}
+
+<h1>Information coffee</h1>
+<div class="row">
+        <div class="col">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ list_coffee.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <p class="card-text"> ID: {{ list_coffee.id }}</p>
+              <h5 class="card-title">Name: {{ list_coffee.name }}</h5>
+              <!-- <p class="card-text">Quantity: {{ list_coffee.quantity }}</p> -->
+              <p class="card-text">Price: {{ list_coffee.price }}00 VND </p>
+              <a href="{% url 'coffee' %}" class="btn btn-primary">Back</a>
+              <a href="{% url 'delete_coffee' list_coffee.id %}" class="btn btn-danger">Delete</a>
+              <a href="{% url 'update_coffee' list_coffee.id %}" class="btn btn-primary">Update</a>
+            </div>
+          </div>
+        </div>
+
+{% endblock %}

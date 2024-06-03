@@ -1,0 +1,32 @@
+{% extends 'base_coffee.html' %}
+
+{% block content %}
+<br><br>
+
+
+<div class="row">
+    {% for coffee in coffees %}
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img src="{{ coffee.image }}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text"> ID: <a href="{% url 'list_coffee' coffee.id %}">{{ coffee.id }} </a></p>
+              <h5 class="card-title">{{ coffee.name }}</h5>
+              <p class="card-text"> {{ coffee.price }}00 VND </p>
+              <form method="post" action="{% url 'order_coffee' %}">
+                  {% csrf_token %}
+                  <input type="hidden" name="coffee_id" value="{{ coffee.id }}">
+                  <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </form>
+                <!-- <form method="post" action="{% url 'quantity_coffee' coffee.id %}">
+                  {% csrf_token %}
+                  <input type="number" name="quantity" value="{{ coffee.quantity }}" min="1" class="form-control mb-2">
+                  <button type="submit" class="btn btn-primary">Select</button>
+                </form> -->
+              </div>
+          </div>
+        </div>
+    {% endfor %}
+{% endblock %}
+
+

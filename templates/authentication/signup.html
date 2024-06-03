@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #333;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .signup-form {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: #fff;
+            width: 300px;
+            text-align: center;
+        }
+
+        .signup-form h2 {
+            margin-bottom: 20px;
+        }
+
+        .signup-form input[type="text"],
+        .signup-form input[type="email"],
+        .signup-form input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background-color: #555;
+            color: #fff;
+        }
+
+        .signup-form .checkbox {
+            margin: 10px 0;
+            text-align: left;
+        }
+
+        .signup-form .checkbox input {
+            margin-right: 10px;
+        }
+
+        .signup-form button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FFA500;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signup-form p {
+            margin-top: 20px;
+        }
+
+        .signup-form a {
+            color: #FFA500;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <form action="/signup" method="post">
+            <!-- Thuộc tính 'action' dữ liệu biểu mẫu sẽ được gửi đến URL '/signup',
+            Thuộc tính method xác định phương thức HTTP sẽ được sử dụng khi gửi dữ liệu biểu mẫu. -->
+            {% csrf_token %} 
+           <!-- Nhap ma thong bao -->
+            <input type="text" id="username" name="username" placeholder="Create a usernam(only letter or number)" Required>
+            <br>
+        
+            <input type="text" id="fname" name="fname" placeholder="Enter your First Name" Required>
+            <br>
+        
+            <input type="text" id="lname" name="lname" placeholder="Enter your Last Name" Required>
+            <br>
+        
+            <input type="email" id="email" name="email" placeholder="Enter your Email" Required>
+            <br>
+            <input type="password" id="pass1" name="pass1" placeholder="Create a Password" Required>
+            <br>
+            
+            <input type="password" id="pass2" name="pass2" placeholder="Confirm your Password" Required>
+            <br>
+            <!-- <input type="text" placeholder="First Name" required>
+            <input type="text" placeholder="Last Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Enter password" required>
+            <input type="password" placeholder="Confirm password" required>
+            <div class="checkbox">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I accept the <a href="#">Terms & Conditions</a></label>
+            </div> -->
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'signin' %}">Login here</a></p>
+    </div>
+</body>
+</html>

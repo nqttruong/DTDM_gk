@@ -1,0 +1,48 @@
+{% extends 'base_coffee.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Coffee</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Your Cart</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for coffee in coffees %}
+                <tr>
+                    <td>{{ forloop.counter }}</td> <!-- Sử dụng forloop.counter để hiển thị số thứ tự -->
+                    <td>{{ coffee.name }}</td> <!-- Tên của coffee -->
+                    <td>{{ coffee.quantity }}</td> <!-- Số lượng của coffee -->
+                    <td>{{ coffee.price }}00</td> <!-- Giá của coffee -->
+                    <td>{{ total_price }}00</td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="3"><strong>Total Cost</strong></td>
+                    <td><strong>{{ total_price }}00</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="{% url 'home' %}" class="btn btn-secondary">Continue Shopping</a>
+        <a href="{% url 'reset_cart' %}" class="btn btn-danger">RESET</a> 
+    </div>
+</body>
+</html>
+
+{% endblock %}
+
+

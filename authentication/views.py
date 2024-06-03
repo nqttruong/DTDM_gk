@@ -147,8 +147,6 @@ def signout(request):
 #         return render(request, 'activation_failed.html')
 
 
-
-
 def coffee(request):
     coffee_list = Coffee.objects.all()
     return render(request, "coffee.html", {'coffees': coffee_list})

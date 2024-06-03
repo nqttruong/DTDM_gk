@@ -147,36 +147,7 @@ def signout(request):
 #         return render(request, 'activation_failed.html')
 
 
-# def get_image_url(prompt):
-#     key = 'sk-proj-gI0fnVmOJ7N6utVoblBqT3BlbkFJVPWfLwN1hOC5fhPxTClu'
-#     openai.api_key = key
 
-#     response = openai.Image.create(
-#         prompt=prompt,
-#         n=1,
-#         size="512x512"
-# )
-#     print("Response: ", response)
-#     image_url = response.data[0].url
-
-#     return image_url
-
-# openai.api_key = os.getenv('OPENAI_API_KEY')
-
-# def image_generation(request):
-#     if request.method == 'POST':
-#         prompt = request.POST.get('prompt')
-#         image_url = get_image_url(prompt)
-
-#         if image_url:
-#             return render(request, 'image_generation.html', {
-#                 'image_url': image_url,
-#             })
-#         else: 
-#             return render(request, 'image_generation.html'), {
-#                 'image_url': "An error occured. Please try again.",
-#             }
-#     return render(request, "image_generation.html")
 
 def coffee(request):
     coffee_list = Coffee.objects.all()

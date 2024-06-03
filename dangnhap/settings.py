@@ -14,15 +14,7 @@ from pathlib import Path
 from . info import * # type: ignore
 import os
 
-# Đặt biến môi trường (thường đặt trong file settings.py)
-# os.environ['OPENAI_API_KEY'] = 'sk-proj-gI0fnVmOJ7N6utVoblBqT3BlbkFJVPWfLwN1hOC5fhPxTClu'
 
-# Sử dụng biến môi trường
-# import openai
-
-# openai.api_key = os.getenv('OPENAI_API_KEY')
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 EMAIL_USE_TLS = EMAIL_USE_TLS # type: ignore
